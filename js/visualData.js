@@ -459,6 +459,7 @@ function stopPeriodicCheck() {
     button.text("iniciar checagem periódica");
     button.classed("btn-outline-success", true);
     button.classed("btn-outline-danger", false);
+    d3.select("#loading-spinner").style("display", "none");
     updateBarChartData([]);
 }
 
