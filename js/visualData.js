@@ -88,7 +88,7 @@ function initializeProjectList() {
                 localStorage.setItem("selectedProject", selected_project);
                 // let selected_mode = d3.select("#modes-list").property('value');
                 d3.select("#project-link").attr("href", `https://app.strateegia.digital/journey/${selected_project}`);
-                drawProject(selected_project, global_selected_mode);
+                // drawProject(selected_project, global_selected_mode);
                 d3.select("#choose_date").text("filtrar itens por data: ");
                 d3.select("#time_ticks").property("value", 50);
             })
@@ -105,7 +105,7 @@ function initializeProjectList() {
             .on("change", () => {
                 let selected_project = d3.select("#projects-list").property('value');
                 // let selected_mode = d3.select("#modes-list").property('value');
-                drawProject(selected_project, global_selected_mode);
+                // drawProject(selected_project, global_selected_mode);
 
             })
             .selectAll("option")
@@ -131,7 +131,7 @@ function initializeProjectList() {
 
 async function drawProject(projectId, s_mode) {
 
-    d3.select("#loading-spinner").style("display", "block");
+    // d3.select("#loading-spinner").style("display", "block");
     d3.select("#graph-view").style("display", "none");
     d3.select("#statistics").style("display", "none");
     console.log("start loading... %o", new Date());
