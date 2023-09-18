@@ -8,7 +8,7 @@ console.log(localStorage);
 
 const svgBarG = d3.select("#barChart");
 const margin = { top: 20, right: 20, bottom: 20, left: 200 }; // Aumente a margem esquerda para rótulos
-const width = window.innerWidth - 800 - margin.left - margin.right;
+const width = 1000 - margin.left - margin.right;
 const height = +svgBarG.attr("height") - margin.top - margin.bottom;
 const g = svgBarG.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
@@ -554,10 +554,10 @@ function updateBarChartData(newData) {
     x.domain([0, d3.max(newData, d => d.soma)]);
     y.domain(newData.map(d => d.name).reverse());
 
-    xAxis.transition().duration(500).call(d3.axisTop(x));
+    xAxis.transition().duration(200).call(d3.axisTop(x));
 
     // Atualização da transição do eixo Y
-    yAxis.transition().duration(500).call(d3.axisLeft(y))
+    yAxis.transition().duration(200).call(d3.axisLeft(y))
         .selectAll(".tick")  // Selecionando todos os ticks (incluindo rótulos)
         .delay((d, i) => i * 100);  // Adicionando um delay para cada tick para dar efeito de atualização sequencial
 
